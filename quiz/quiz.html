@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>1</title>
+  <link href="quiz.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  
+  <div class="nav">
+    <div id="clock"></div>
+    <div class="nav-right-items">
+      <div class="nav-item">랭킹</div>
+      <div class="nav-item">관리자에게 문의 </div>
+      
+      <a href="https://www.instagram.com/hyunsu7l5" target="_blank" class="button inline-block text-white t400 ls1 clearfix">
+      <img src="appbanner_005.jpg" style="width:25px">
+      </a>
+    </div>
+  </div>
+  <div class="main">
+    <div class="title">오늘의 문제</div>
+    <div class="subtitle">맞추고 푸짐한 보상 받아가세요~</div> 
+  </div>
+  <script src="script.js"></script>
+  <button class="button" onclick="redirect()">시작하기</button>
+  <script>
+      function redirect() {
+          window.location.href = 'login.html';
+      }
+  </script>
+
+  
+  
+
+  <script>
+      function updateClock() {
+          const now = new Date();
+          const hours = String(now.getHours()).padStart(2, '0');
+          const minutes = String(now.getMinutes()).padStart(2, '0');
+          const seconds = String(now.getSeconds()).padStart(2, '0');
+          document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+      }
+
+      // Initial call to display the clock immediately
+      updateClock();
+      // Update the clock every second
+      setInterval(updateClock, 1000);
+  </script>
+</body>
+
+</html>

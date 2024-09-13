@@ -1,0 +1,63 @@
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gasoek+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&display=swap');
+body{
+  background-color: #90e0ef;
+  font-family: "Do Hyeon", sans-serif;
+}
+.clock {
+  font-style: normal;
+  color: #ffffff
+  
+
+
+  
+  
+}
+.nav {
+  height:70px;
+  border-bottom:1px solid #ffffff;
+  display:flex;
+  align-items: center;
+
+}
+.nav-right-items {
+  display:flex;
+  margin-left:auto;
+}
+.nav-item {
+  font-family: "Do Hyeon", sans-serif;
+  margin-left:0.5rem;
+  font-style:normal;
+  color:#ffffff
+}
+.a {
+  margin-left:10px;
+}
+.title {
+  text-align: center;
+  font-family: "Gasoek One", sans-serif;
+  font-size: 3.5rem;
+  font-weight:400
+  font-style: normal;
+  color: #ffffff
+
+}
+.subtitle{
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight:300;
+  font-family: "Do Hyeon", sans-serif;
+  font-style: normal;
+  color: #ffffff
+
+}
+.main{
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
