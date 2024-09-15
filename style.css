@@ -5,47 +5,110 @@
   font-style: normal;
 }
 
-a {
-  text-decoration-line: none;
-  color: black
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.body {
-  font-family: 'Pretendard-Regular'
-    font-style: normal;
-
+body {
+    font-family: 'Pretendard-Regular';
 }
 
-.nav {
-  height: 70px;
-  border-bottom: 1px solid #7E7E7E;
-  display: flex;
-  align-items: center;
-  text-align: center;
+.header {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
 }
 
-.nav-items {
-  display: flex;
-  text-align: center;
-  margin: 0 auto;
+.logo img {
+    width: 100px;
 }
 
-.nav-item {
-  margin-left: 30px;
-  font-size: 130%;
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
 }
 
-.slider {
-    width: 100%;                                 
-    overflow: hidden;
-    position: relative;
+    .nav-links li a {
+        text-decoration: none;
+        color: #333;
+    }
+
+.auth {
+    text-align: right;
 }
-.slide {
-    float: left;
-    width: 100%;
-    position: relative;
+
+    .auth button {
+        margin-left: 10px;
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    padding: 20px;
 }
-img {
-    width: 100%;
-    height: auto;                                                        
+
+.image-section {
+    grid-column: 1 / span 3;
+    text-align: center;
+}
+
+    .image-section img {
+        max-width: 100%;
+        height: auto;
+    }
+
+.hot-section {
+    grid-column: 1 / 2;
+}
+
+    .hot-section ul {
+        list-style: none;
+    }
+
+        .hot-section ul li a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+.video-section {
+    grid-column: 1 / 2;
+    margin-top: 20px;
+}
+
+.videos {
+    display: flex;
+    gap: 10px;
+}
+
+.video-box {
+    background-color: #ccc;
+    width: 100px;
+    height: 75px;
+}
+
+.sports-section {
+    grid-column: 2 / 4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.league h2 {
+    text-align: center;
+}
+
+.league ol {
+    padding-left: 20px;
 }
