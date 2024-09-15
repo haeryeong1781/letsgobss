@@ -1,82 +1,77 @@
 <!DOCTYPE html>
-
-<html lang="ko">
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
-    <title>BSS 라온숲</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports News</title>
+    <link rel="stylesheet" href="StyleSheet1.css">
 </head>
 
 
 <body>
-    
-    <div class="nav"> 
-        <img src="images/nav_logo.jpg" alt="nav_logo" border="0" width="140" height="60"/>
-        
-        <div class="nav-items">
-            <a href="free/free.html" target="_self" class="nav-item">자유게시판</a>
-            <a href="quiz/quiz.html" target="_self" class="nav-item">오늘의 퀴즈</a>
-            <a href="question/question.html" target="_self" class="nav-item">문의</a>
+    <header class="header">
+        <div class="logo">
+            <img src="images/nav_logo.jpg" alt="Logo" border="0" width="140" height"60">
         </div>
-        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="free/free.html" target="_self" class="nav-item">자유게시판</a></li>
+                <li><a href="quiz/quiz.html" target="_self" class="nav-item">오늘의 퀴즈</a></li>
+                <li><a href="question/question.html" target="_self" class="nav-item">관리자 문의</a></li>
+            </ul>
+        </nav>
         <div class="logins">
-            <a href="login/signup.html" target="_self" class="login">SIGN UP</a>
-            <a href="login/signin.html" target="_self" class="login">SIGN IN</a>
+            <button>Sign Up</button>
+            <button>Sign In</button>
         </div>
-    </div>
+    </header>
 
-    
-    <div class="slider">
-        <div class="slide">
-            <img src="slideimage1.png" alt="이미지 1">
-        </div>
-        <div class="slide">
-            <img src="slideimage2.png" alt="이미지 2">
-        </div>
-        <div class="slide">
-            <img src="slideimage3.png" alt="이미지 3">
-        </div>
-        <script>
-            let currentSlide = 0;
-            const slides = document.querySelectorAll('.slide');
-            const slideCount = slides.length;
- 
-            function showSlide(n) {
-                slides.forEach(slide => slide.style.display = 'none');
-                slides[n].style.display = 'block';
-            }
- 
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % slideCount;
-                showSlide(currentSlide);
-            }
- 
-            function prevSlide() {
-                currentSlide = (currentSlide - 1 + slideCount) % slideCount;
-                showSlide(currentSlide);
-            }
- 
-            document.addEventListener('DOMContentLoaded', () => {
-                showSlide(currentSlide);
-                setInterval(nextSlide, 3000); // 3초마다 자동 슬라이드                
-            });
-        </script>
-        
-    </div>
-        
-            
-    </div>
-       
-        
-        
-    </div>
+    <main class="main-content">
+        <section class="image-section">
+            <img src="banner-image.jpg" alt="Main Image">
+        </section>
 
-    <object data="" width="" height="" class="banner">
-    
-    </div>
+        <section class="hot-section">
+            <h2>Hot🔥</h2>
+            <ul>
+                <li><a href="#">충격공포실화~!</a></li>
+                <li><a href="#">집가고싶다</a></li>
+                <li><a href="#">어쩌구저쩌구링크</a></li>
+            </ul>
+        </section>
 
+        <section class="video-section">
+            <h2>Video</h2>
+            <div class="videos">
+                <div class="video-box">음유재원의 new 영상</div>
+                <div class="video-box">범찬tv 좋댓구알</div>
+            </div>
+        </section>
+
+        <section class="sports-section">
+            <div class="league" id="epl">
+                <h2>EPL</h2>
+                <ol>
+                    <li>Chelsea</li>
+                    <li>Man City</li>
+                    <li>Man U</li>
+                    <!-- more items -->
+                </ol>
+            </div>
+            <div class="league" id="nba">
+                <h2>NBA</h2>
+                <ol>
+                    <!-- items here -->
+                </ol>
+            </div>
+            <div class="league" id="nbl">
+                <h2>NBL</h2>
+                <ol>
+                    <!-- items here -->
+                </ol>
+            </div>
+        </section>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
