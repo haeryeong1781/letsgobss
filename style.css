@@ -14,6 +14,13 @@
 body {
     font-family: 'Pretendard-Regular';
 }
+.music {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-family: 'Pretendard-Regular'; 
+}
+.musicmsg{margin-left: 40px;}
 
 .header {
     height: 90px;
@@ -65,20 +72,15 @@ body {
 
 
 .image-section {
-    width: 100vw; /* Sets the width to 100% of the viewport width */
-    position: relative; /* Ensures that the section is positioned relative to the viewport */
-    left: 50%; /* Moves the section to the middle */
-    right: 50%;
-    margin-left: -50vw; /* Shifts it back to the left edge */
-    margin-right: -50vw; /* Ensures it stretches to the right edge */
-    text-align: center;
-    margin-bottom: 10px;
+    width: 100vw;  /* Viewport width to make it full width */
+    overflow: hidden;  /* Hide any overflowing content */
 }
 
-    .image-section img {
-        width: 100%; /* Makes sure the image stretches to fill the container */
-        height: auto; /* Maintains the aspect ratio of the image */
-    }
+.image-section video {
+    width: 100%;  /* Make the video span the entire section */
+    height: 200px;  /* Maintain aspect ratio */
+    object-fit: cover;  /* Crop video if necessary to fill the section */
+}
 
 .main-content {
     width: 1000px;
