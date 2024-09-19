@@ -8,33 +8,40 @@
 </head>
 
 <body>
-  
+
   <div class="nav">
     <div id="clock"></div>
     <div class="nav-right-items">
-      <div class="nav-item">랭킹</div>
-      <div class="nav-item">관리자에게 문의 </div>
-      
+      <a href="rank.html" target="_self" class="nav-item">랭킹</a>
+      <a href="inquiry.html" target="_self" class="nav-item">관리자 문의</a>
+
       <a href="https://www.instagram.com/hyunsu7l5" target="_blank" class="button inline-block text-white t400 ls1 clearfix">
-      <img src="appbanner_005.jpg" style="width:25px">
+      <img src="appbanner_005.jpg" style="width:20%">
       </a>
     </div>
   </div>
+  <!-- 메뉴바 아래 메인화면  -->
   <div class="main">
     <div class="title">오늘의 문제</div>
-    <div class="subtitle">맞추고 푸짐한 보상 받아가세요~</div> 
+    <div class="subtitle">맞추고 푸짐한 보상 받아가세요~
+    
+    </div> 
   </div>
-  <script src="script.js"></script>
-  <button class="button" onclick="redirect()">시작하기</button>
+  <div class="container">
+    <script src="script.js"></script>
+    <button class="button" onclick="redirect()">문제 맞추기!! </button></div>
+
+  <div class="unav"></div>
+  </div>
   <script>
       function redirect() {
-          window.location.href = 'login.html';
+          window.location.href = 'quiz1.html';
       }
   </script>
 
-  
-  
 
+
+<!-- 시계  -->
   <script>
       function updateClock() {
           const now = new Date();
