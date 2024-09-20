@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2</title>
+  <link href="quiz1.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="nav">
+    <div id="clock"></div>
+    <div class="nav-right-items">
+      <div class="nav-item">랭킹</div>
+      <div class="nav-item">관리자에게 문의 </div>
+
+      <a href="https://www.instagram.com/hyunsu7l5" target="_blank"
+        class="button inline-block text-white t400 ls1 clearfix">
+        <img src="appbanner_005.jpg" style="width:20%">
+      </a>
+    </div>
+  </div>
+
+
+  <div class="main">
+    <div class="subtitle">새 문제 갱신까지 남은시간</div>
+    <div id="countdown" class="countdown"></div>
+    <div class="imagec">
+      <img src="quiz2.png" width="700">
+    </div>
+  </div>
+
+  <div class="input-section">
+    <form id="quiz-form">
+      <input type="text" id="nickname" class="info" placeholder="닉네임" />
+      <input type="text" id="answer" class="info" placeholder="답" />
+      <button type="submit" id="submit-button" class="info">제출</button>
+    </form>
+
+    <div id="result" class="message hidden"></div>
+    <div id="retry-timer" class="hidden"></div>
+
+    
+  </div>
+  <div class="unav"></div>
+
+
+  <!--시계스크립트  -->
+  <script>
+    function updateCountdown() {
+      const now = new Date(); // 현재 시간
+      const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1); // 다음 자정
+      const diff = tomorrow - now; // 남은 시간 계산
+
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      // 남은 시간을 화면에 표시
+      document.getElementById("countdown").textContent =
+        `${hours}시간 ${minutes}분 ${seconds}초`;
+    }
+
+    // 1초마다 카운트다운 업데이트
+    setInterval(updateCountdown, 1000);
+
+    // 페이지 로드 시 즉시 시간 표시
+    updateCountdown();
+  </script>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    // Initial call to display the clock immediately
+    updateClock();
+    // Update the clock every second
+    setInterval(updateClock, 1000);
+  </script>
+  <!-- 퀴즈ㅡㅡㅡㅡㅡㅡㅡ  -->
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const correctAnswer1 = '41268-7935'; // 첫 번째 정답
+      const correctAnswer2 = '41286-7953'; // 두 번째 정답
+      const submitButton = document.getElementById('submit-button');
+      const resultElement = document.getElementById('result');
+      const retryTimerElement = document.getElementById('retry-timer');
+      let retryTimeout;
+
+      // 문제를 제출하는 이벤트 리스너
+      document.getElementById('quiz-form').addEventListener('submit', function (event) {
+        event.preventDefault(); // 폼 제출 기본 동작 방지
+        const answer = document.getElementById('answer').value;
+
+        if (answer === correctAnswer1 || answer === correctAnswer2) {
+          resultElement.textContent = '정답입니다!';
+          resultElement.className = 'message correct';
+          setTimeout(() => {
+            window.location.href = 'rank.html'; // 경로는 필요에 맞게 수정 가능
+          }, 2000);
+        } else {
+          resultElement.textContent = '틀렸습니다!';
+          resultElement.className = 'message incorrect';
+          submitButton.classList.add('disabled');
+          document.getElementById('nickname').disabled = true;
+          document.getElementById('answer').disabled = true;
+          retryTimerElement.classList.remove('hidden');
+          startRetryTimer();
+        }
+
+        resultElement.classList.remove('hidden');
+      });
+
+      // 다시 시도 타이머
+      function startRetryTimer() {
+        let timeLeft = 300; // 5분 (300초)
+        retryTimerElement.textContent = `다시 시도할 수 있는 시간: ${formatTime(timeLeft)}`;
+        retryTimeout = setInterval(() => {
+          timeLeft--;
+          retryTimerElement.textContent = `다시 시도할 수 있는 시간: ${formatTime(timeLeft)}`;
+          if (timeLeft <= 0) {
+            clearInterval(retryTimeout);
+            submitButton.classList.remove('disabled');
+            document.getElementById('nickname').disabled = false;
+            document.getElementById('answer').disabled = false;
+            retryTimerElement.classList.add('hidden');
+          }
+        }, 1000);
+      }
+
+      function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      }
+    });
+  </script>
+
+</body>
+
+</html>
