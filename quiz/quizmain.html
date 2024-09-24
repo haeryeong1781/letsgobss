@@ -88,8 +88,7 @@
   <!-- 퀴즈ㅡㅡㅡㅡㅡㅡㅡ  -->
   <script>
     document.addEventListener('DOMContentLoaded', (event) => {
-      const correctAnswer1 = '41268-7935'; // 첫 번째 정답
-      const correctAnswer2 = '41286-7953'; // 두 번째 정답
+      const correctAnswer = '다-조-하-클-스'; // 첫 번째 정답
       const submitButton = document.getElementById('submit-button');
       const resultElement = document.getElementById('result');
       const retryTimerElement = document.getElementById('retry-timer');
@@ -100,7 +99,8 @@
         event.preventDefault(); // 폼 제출 기본 동작 방지
         const answer = document.getElementById('answer').value;
 
-        if (answer === correctAnswer1 || answer === correctAnswer2) {
+        if (answer === correctAnswer) {
+          
           resultElement.textContent = '정답입니다!';
           resultElement.className = 'message correct';
           setTimeout(() => {
