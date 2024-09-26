@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>2</title>
-  <link href="quizmain.css" rel="stylesheet" type="text/css" />
+  <link href="quiz1.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -29,7 +29,7 @@
     <div class="subtitle">새 문제 갱신까지 남은시간</div>
     <div id="countdown" class="countdown"></div>
     <div class="imagec">
-      <img src="quiz3.png" width="700">
+      <img src="quiz2.png" width="700">
     </div>
   </div>
 
@@ -88,7 +88,8 @@
   <!-- 퀴즈ㅡㅡㅡㅡㅡㅡㅡ  -->
   <script>
     document.addEventListener('DOMContentLoaded', (event) => {
-      const correctAnswer = '다-조-하-클-스'; // 첫 번째 정답
+      const correctAnswer1 = '41268-7935'; // 첫 번째 정답
+      const correctAnswer2 = '41286-7953'; // 두 번째 정답
       const submitButton = document.getElementById('submit-button');
       const resultElement = document.getElementById('result');
       const retryTimerElement = document.getElementById('retry-timer');
@@ -99,8 +100,7 @@
         event.preventDefault(); // 폼 제출 기본 동작 방지
         const answer = document.getElementById('answer').value;
 
-        if (answer === correctAnswer) {
-          
+        if (answer === correctAnswer1 || answer === correctAnswer2) {
           resultElement.textContent = '정답입니다!';
           resultElement.className = 'message correct';
           setTimeout(() => {
