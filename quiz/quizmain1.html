@@ -29,7 +29,7 @@
     <div class="subtitle">새 문제 갱신까지 남은시간</div>
     <div id="countdown" class="countdown"></div>
     <div class="imagec">
-      <img src="quiz2.png" width="700">
+      <img src="quiz5.png" width="700">
     </div>
   </div>
 
@@ -88,8 +88,8 @@
   <!-- 퀴즈ㅡㅡㅡㅡㅡㅡㅡ  -->
   <script>
     document.addEventListener('DOMContentLoaded', (event) => {
-      const correctAnswer1 = '41268-7935'; // 첫 번째 정답
-      const correctAnswer2 = '41286-7953'; // 두 번째 정답
+      const correctAnswer = '0' // 첫 번째 정답
+     // 두 번째 정답
       const submitButton = document.getElementById('submit-button');
       const resultElement = document.getElementById('result');
       const retryTimerElement = document.getElementById('retry-timer');
@@ -100,7 +100,7 @@
         event.preventDefault(); // 폼 제출 기본 동작 방지
         const answer = document.getElementById('answer').value;
 
-        if (answer === correctAnswer1 || answer === correctAnswer2) {
+        if (answer === correctAnswer) {
           resultElement.textContent = '정답입니다!';
           resultElement.className = 'message correct';
           setTimeout(() => {
